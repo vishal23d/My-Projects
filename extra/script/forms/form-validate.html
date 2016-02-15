@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head>
+	<link href="../../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+	<title>FORM-VALIDATION</title>
+
+<style>
+	#info,#myOut,#info1,#myOut1{display:inline-block;width:auto;background-color:#CDCDCD;font-size:14px;font-style: italic;}
+	/*#itext{border:1px solid red;}*/
+	label{width:15%;float:left;}
+</style>
+
+
+<script>
+	function newVal(){
+		// var lmnts = document.getElementsByTagName("input");
+		var lmnts = document.getElementById("newForm");
+		var totInput = lmnts.length;
+		
+		var i;
+		var strArray=[];
+		var arrType=[];
+		
+		for(i=0; i<totInput; i++)
+		{
+			// strArray[i] = lmnts[i].getAttribute('value');
+			strArray[i] = lmnts.elements[i].value;
+			arrType[i] = lmnts.elements[i].type;
+			
+			document.getElementById("out2").innerHTML = arrType;
+			document.getElementById("out1").innerHTML = "value : " + strArray;
+			
+			if(arrType[i] === 'text')
+			{
+				var typeText = strArray[i]
+				var strLen = typeText.length; 
+				var charArray=[];
+				
+				for(var j=0;j<strLen;j++)
+				{
+					strArray[j] = typeText.charAt(j);
+					document.getElementById("out5").innerHTML = strArray; 					
+				}
+				
+				for(var j=0;j<strLen;j++)
+				{
+					document.getElementById("out3").innerHTML = strArray[j];
+					if(isNaN(strArray[j]))
+					{
+						document.getElementById("out3").innerHTML = "Valid Entry..";
+						return true;
+					}
+					else
+					{
+						document.getElementById("info1").innerHTML = "Enter only alphabets..!!";
+						break;
+					}
+				}
+
+				document.getElementById('out4').innerHTML = "TEST !!";
+			}
+								
+			
+			
+		}
+		// document.getElementById("out1").innerHTML = strArray;
+	}
+</script>
+
+</head>
+<body>
+	
+	<div class="container">
+		
+		<div class="jumbotron">
+			<form name="myForm" id="newForm" method="get" autocomplete="off">
+			
+			<p>
+			  <label for="f_name">First name :</label>
+			  <input type="text" name="fname" id="itext1">
+			  <span id="info1"></span>
+			  <span id="myOut1"></span>
+			 </p>
+			 
+			 
+			 <p> 
+			  <label for="lname">Last name :</label>
+			  <input type="text" name="lname" id="itext2">
+			  <span id="info2"></span>
+			  <span id="myOut2"></span>
+			 </p>
+			 
+			 <!-- <p> 
+			  <label for="mail">E-mail :</label>
+			  <input type="email" name="e_mail" id="itext3">
+			  <span id="info3"></span>
+			  <span id="myOut3"></span>
+			 </p> -->
+			 
+			  
+			 <br>
+			  
+			 <input type="button" value="SUBMIT" id="sub" onclick="newVal()"/>			  
+			
+			 <br>
+			</form>
+			<p id="out1">input values : </p>
+			
+			 <p id="out2">input type : </p>
+			 <p id="out3">test</p>
+			 <p id="out4"></p>
+			 <p id="out5"></p>
+			 
+		</div>
+		
+		<!-- <div class="second">
+			<form name="form2" method="get">
+				<p>
+					<label for="e_id">Email-id</label>
+					<input type="text" name="eid" id="emid">
+				</p>
+				
+				<input type="submit" value="Submit" id="sbt" onclick="cssMulti('emid',{'background':'#cdcdcd','color':'red'})"/>
+			</form>
+		</div>
+		<script>
+            function cssMulti(element,css){
+                var ele=document.getElementById(element);
+                for(i in css){
+                    ele.style[i]=css[i];
+                }                
+            }
+           
+            // cssMulti('emid',{'background':'#cdcdcd','color':'red'});
+        </script> -->
+        
+        
+	</div>
+	
+	 
+	
+	<script type="text/javascript" src="../../stylesheets/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <script>
+	function newVal(){
+		var inpt = document.getElementsByTagName("input");
+		var t_num = inpt.length;
+		var count=0;
+		var i;
+		var typ=[];
+		
+		for(i=0; i<t_num; i++)
+		{
+			typ[i] = inpt[i].getAttribute('value');
+			document.getElementById("out1").innerHTML = typ;
+			if(typ[i] === 'text'){
+				count = count + 1;
+			}
+		}
+		
+		document.getElementById("out2").innerHTML ="no. of input text elements: " + count;
+	}
+</script> -->
+
+<!-- <script>
+	function newVal(){
+		var inputNum = document.myForm.elements.length;
+		document.getElementById("out1").innerHTML = input_no;
+		
+		//global variable
+		i;
+		strLength;
+		inputValue = document.myForm.elements[i].value;
+		myArray=[];
+		
+			function strArray(getStr){
+				var getStr;
+				strLength = getStr.length;
+				
+				for(i=0; i<strLength; i++)
+				{
+					myArray[i] = getStr.charAt(i);
+					return;
+				}
+			} //function strArray
+			
+			for(i=0; i<inputNum; i++)
+			{
+				var inputType = document.myForm.elements[i].type;
+				strArray(inputValue);
+				
+				switch(inputType)
+				{
+					case 'text':
+									for(i=0; i<strLength; i++)
+									{
+										if(isNaN(myArray[i]) || (myArray == ""))
+										{
+											document.getElementById('out3').innerHTML = "Input Right eh!!";
+											return;
+										}
+										else{
+											document.getElementById('out2').innerHTML = "Alphabets only!!";
+											break;
+										}
+									}; //for-loop
+									
+									break;
+								
+					default:  document.getElementById('out4').innerHTML = "TEST !!";
+				} //switch
+			} //for-loop
+	}
+</script> -->

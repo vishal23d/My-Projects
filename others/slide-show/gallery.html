@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SLIDE - SHOW</title>
+		<link type="text/css" href="animate.css" rel="stylesheet"/>
+		<link type="text/css" href="../../stylesheets/bootstrap.min.css" rel="stylesheet"/>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var elemnt = document.getElementById("gallery1");
+				var myUl = document.getElementById("ul1");
+				var tot_Li = document.getElementsByTagName("li").length;
+				document.getElementById("out1").innerHTML = tot_Li;
+				// var elmnt_Li = document.getElementsByTagName("li");
+				// document.getElementsByTagName("li").setAttribute('height','150px');
+				var wid_Li = document.getElementById("gallery1").style.getPropertyValue("float");
+				document.getElementById("out2").innerHTML = wid_Li;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="container">
+				
+				<div class="first col-md-12 col-sm-12 cols-xs-12">
+					<div class="gallery-block col-md-12 col-sm-12 col-xs-12 no-padding">
+						<h2><a href="#nogo">GALLERY - SLIDE SHOW : TYPE 1</a></h2>
+						
+						<div class="gallery col-md-12 col-sm-12 col-xs-12 no-padding" id="gallery1">
+							<ul class="list-unstyled" id="ul1">
+								<li><a href="#nogo"><img src="../../images/img1.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img2.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img3.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img4.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img5.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img6.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img7.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+								<li><a href="#nogo"><img src="../../images/img8.jpg" class="img-responsive" alt="gallery-img"/></a></li>
+							</ul>
+						</div><!--GALLERY-->
+						
+						<p id="out1">wer</p>
+						<p id="out2">li li</p>
+					</div><!--GALLERY-BLOCK-->
+				</div><!--FIRST-->
+				
+			</div><!--CONTAINER-->
+		</div><!--WRAPPER-->
+		<script type="text/javascript" href="../../stylesheets/bootstrap.min.js" ></script>
+		<script type="text/javascript" href="../../stylesheets/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" href="../../stylesheets/jquery-ui.min2.js" ></script>
+		
+		
+	</body>
+</html>

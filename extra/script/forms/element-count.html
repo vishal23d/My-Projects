@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+	<link href="../../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+	<title>ELEMENT - COUNT </title>
+
+<style>
+	#info,#myOut,#info1,#myOut1{display:inline-block;width:auto;background-color:#CDCDCD;font-size:14px;font-style: italic;}
+	/*#itext{border:1px solid red;}*/
+</style>
+
+<!-- <script>
+	function myValidate(){
+		var x = document.forms["myForm1"]["lname"].value;
+		if(x == "" || x == null )
+		{
+			document.getElementById('info1').innerHTML = "Please fill this field";
+			 // alert("Please fill this field");
+			 // document.getElementById("info").innerHTML = "Please fill this field";
+			 // $("#itext").css("border-width",)
+			// $(itext).css('border-color','red');
+			// $(info).css('display','block');
+			return false;
+		}
+		
+	};
+</script> -->
+
+<script>
+	function countE(){
+		var inp = document.getElementsByTagName("input");
+		var num = inp.length;
+		document.getElementById("out1").innerHTML = "Toatal no. of input elements : " + num;
+		return false;
+	}
+</script>
+
+<!-- <script>
+	function cText(){
+		var inpt = document.getElementsByTagName("input");
+		var t_num = inpt.length;
+		
+		var d = document.getElementById("itext1").getAttribute('type');
+		
+		if(d === 'text')
+		{
+			document.getElementById("out2").innerHTML = "textc";
+		}
+	}
+</script> -->
+
+<script>
+	function cText(){
+		var inpt = document.getElementsByTagName("input");
+		var t_num = inpt.length;
+		var count=0;
+		var i;
+		var typ=[];
+		
+		for(i=0; i<t_num; i++)
+		{
+			typ[i] = inpt[i].getAttribute('type');
+			
+			if(typ[i] === 'text'){
+				count = count + 1;
+			}
+		}
+		
+		document.getElementById("out2").innerHTML ="no. of input text elements: " + count;
+	}
+</script>
+
+</head>
+<body>
+	
+	<div class="container">
+		
+		<div class="jumbotron">
+			<form name="myForm1" method="get" autocomplete="off">
+			
+			<p>
+			  <label for="f_name">First name:</label>
+			  <input type="text" name="fname" id="itext1">
+			  <span id="info1"></span>
+			  <span id="myOut1"></span>
+			 </p>
+			 
+			 
+			<p> 
+			  <label for="lname">Last name:</label>
+			  <input type="text" name="lname" id="itext2">
+			  <span id="info2"></span>
+			  <span id="myOut2"></span>
+			 </p>
+
+			  		
+			  <p>
+			  	<input type="radio">
+			  </p> 
+			  
+			  <input type="button" value="Total - Count" id="subt" onclick="countE()"/>
+			  
+			  <input type="button" value="Type - TEXT" id="subt" onclick="return cText()"/>
+			  
+			
+			</form>
+			
+			<br>
+			
+			<p id="out1" style="margin-bottom:10px;">Total - Count</p>
+			
+			<p id="out2">Type - TEXT</p>
+			
+			<p id="out3"></p>
+			
+		
+			 
+		</div>
+		
+        
+        
+	</div>
+	
+	 
+	
+	<script type="text/javascript" src="../../stylesheets/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE  html>
+<head>
+	<title>CUBE</title>
+</head>
+<style>
+*{box-sizing:border-box;}
+.out{margin:100px;perspective:1000px;perspective-origin:50% -150px;}
+
+.cube{width:100px;margin:150px 100px;transform-style:preserve-3d; transform: rotateX(0deg);}
+	
+.cube div{width:200px;height:200px;position:absolute;border:1px solid black;text-align:center;opacity:0.8;}
+.cube h2{padding:30% 0%;}
+
+.front{background-color:lightblue;transform: rotateY(180deg);transform-origin: center center;}
+.back{background-color:lightyellow;transform:translateZ(200px);}
+.right{background-color:lightgrey;transform-origin: right center;transform: rotateY(90deg);}
+.left{background-color:lightgreen;transform-origin: left center;transform: rotateY(-90deg);}
+.top{background-color:violet;transform-origin: center top;transform: rotateX(90deg);}
+.bottom{background-color:lightpink;transform-origin: center bottom;transform: rotateX(-90deg);}
+
+</style>
+
+<body>
+	
+	<div class="out">
+		<div class="cube">
+			
+			<div class="front"><h2>FRONT</h2></div>
+			<div class="back"><h2>BACK</h2></div>
+			<div class="right"><h2>RIGHT</h2></div>
+			<div class="left"><h2>LEFT</h2></div>
+			<div class="top"><h2>TOP</h2></div>
+			<div class="bottom"><h2>BOTTOM</h2></div>
+		</div>
+	</div>
+</body>
+</html>

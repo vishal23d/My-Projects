@@ -1,0 +1,164 @@
+.menu-collapser {
+    position: relative;
+    background-color: #666;
+    color: #FFF;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+.collapse-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 40px;
+    background-color: #0E0E0E;
+    background-image: linear-gradient(to bottom, #151515, #040404);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.075);
+    padding: 7px 10px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+
+    transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+.collapse-button:hover, .collapse-button:focus {
+    background-image: none;
+    background-color: #040404;
+    color: #FFF;
+}
+.collapse-button .icon-bar {
+    background-color: #F5F5F5;
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    display: block;
+    height: 2px;
+    width: 18px;
+    margin: 2px 0;
+}
+
+ul.slimmenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   /* width: 100%;*/
+}
+ul.slimmenu li {
+    position: relative;
+    display: inline-block;
+    float:left;
+}
+ul.slimmenu li.sub_menu li{
+	border-bottom: 1px solid #999;
+}
+ul.slimmenu > li { margin-right: 0px;  }
+
+ul.slimmenu.collapsed li:last-child { border-bottom: 0 }
+ul.slimmenu li a {
+    display: block;
+    transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -webkit-transition: background-color 0.5s ease-out;
+    float: left;
+    
+    width: 100%;
+    box-sizing: border-box;
+}
+ul.slimmenu li a:hover {
+    text-decoration: none;
+}
+ul.slimmenu li .sub-collapser {
+   
+	position: absolute;
+	right: 35%;
+	
+	width:35px;
+	height: 100%;
+	text-align: center;
+	z-index: 999;
+	cursor: pointer;
+}
+ul.slimmenu li .sub-collapser:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height:100%;
+}
+ul.slimmenu li .sub-collapser > i {
+     font-size: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+ul.slimmenu li ul {
+    margin: 0;
+    list-style-type: none;
+}
+/*.sub-collapser i{color:#fff!important;}
+ul.slimmenu > li > ul > li > ul > li{ background-color:#8B8B8B;}
+ul.slimmenu > li > ul > li > ul > li > ul > li{ background-color:#949494;}
+ul.slimmenu > li > ul > li > ul > li > ul > li > ul > li{ background-color:#A6A5A5;}
+ul.slimmenu > li > ul > li > ul > li > ul > li > ul > li > ul > li{ background-color:#CACACA;}
+ul.slimmenu li.sub_menu a {padding-right: 44px;}*/
+
+ul.slimmenu li > ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 999;
+    width:200px;   
+}
+ul.slimmenu li > ul > li ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+}
+
+ul.slimmenu.collapsed li {
+    display: block;
+    width: 100%;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+ul.slimmenu.collapsed li a {
+    display: block;
+    padding: 10px 2%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+ul.slimmenu.collapsed li .sub-collapser {
+    height: 36px;
+}
+ul.slimmenu.collapsed li > ul {
+    display: none;
+    position: static;
+    width:100%;
+}
+ul.slimmenu li > ul > li > a{padding: 10px 8px;}
+ul.slimmenu li > ul > li{width: 100%;}	

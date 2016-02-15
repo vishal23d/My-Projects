@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FINAL MENU - SCRIPT</title>
+		
+		<link href="../../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="menu.css" media="all" rel="stylesheet" type="text/css" />
+
+		<style>
+			body{background-color:#000;}
+		</style>	
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				
+				<div class="header-block">
+					<div class="container no-padding">
+						<div class="row no-margin">
+							
+							<div class="header-top">
+								<div class="col-md-9 col-sm-9 col-xs-12 no-padding">
+									
+									<div class="logo wow slideInLeft">
+										<a href="#nogo"><img src="../../../images/logo1.png" alt="logo" class="img-responsive"></a>
+									</div><!--logo-->
+									
+								</div><!--col-md-6-->
+								
+								<div class="col-md-3 col-sm-3 col-xs-12 no-padding">
+									<div class="head-right">
+										
+										<div class="col-md-7 col-sm-7 col-xs-4 no-padding pull-right">
+											<div class="book_online wow slideInRight">
+												<p><a href="#nogo">Book Online</a></p>
+											</div>
+											
+											
+										</div>
+										
+									</div><!--head-right-->
+									
+								</div><!--col-md-6-->
+							</div><!--header-top-->
+							
+							<div class="menu-block">
+								<div class="menucontainer">
+									
+									<ul class="blue" id="sub">
+										<li class="menu-animate"><a href="#nogo">HOME</a>
+											<ul>
+												<li class=""><a href="#nogo">HOME 1</a></li>
+												<li class=""><a href="#nogo">HOME 2</a></li>
+												<li class="menu-animate1"><a href="#nogo">HOME 3</a>
+													<!-- <ul>
+														<li><a href="#nogo">HOME 1-1</a></li>
+														<li><a href="#nogo">HOME 2-1</a></li>
+														<li><a href="#nogo">HOME 3-1</a></li>
+													</ul> -->
+												</li>
+											</ul>
+										</li>
+											
+										<li class="active"><a href="#s-menu1">ABOUT US</a></li>
+										<li class=""><a href="#nogo">ANTIQUITIES</a></li>
+										
+										<li class="">
+											<a href="#nogo" class="learn-menu">ART</a>
+											<ul>
+												<li class=""><a href="#nogo">ART 1</a></li>
+												<li class=""><a href="#nogo">ART 2</a></li>
+												<li class=""><a href="#nogo">ART 3</a></li>
+											</ul>
+										</li>
+											
+										<li class=""><a href="#nogo">CLOCKS</a>
+											<ul>
+												<li class=""><a href="#nogo">CLOCKS 1</a></li>
+												<li class=""><a href="#nogo">CLOCKS 2</a></li>
+												<li class=""><a href="#nogo">CLOCKS 3</a></li>
+											</ul>
+										</li>
+										<li class=""><a href="#nogo">JEWELLERY</a></li>
+										<li class=""><a href="#nogo">CONTACT US</a></li>
+										<li class=""><a href="#nogo">SERVICES</a></li>
+										<li class="" id="last-1"><a href="#nogo">ACCESSORIES</a></li>
+										<li class="" id="last"><a href="#nogo">ELECTRONICS</a></li>
+										
+									</ul><!--blue-->
+									
+								</div><!--menucontainer-->
+							</div><!--menu-block-->
+							
+							<div class="banner-block">
+								<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+									
+									<input type="button" onclick="addMore()" value="CLICK"/>
+									
+									<p id="out1">TOTAL</p>
+									<p id="out2">TEST</p>
+									<p id="out3">TETST 2</p>
+									<p id="out4">TETST 3</p>
+									
+									<div class="banner">
+										<div class="flexslider">
+											<ul class="slides">
+												<li><a href="#nogo"><img class="img-responsive" src="../../../images/banner.jpg" title="Banner" alt="banner-img"/></a></li>
+											</ul><!--slides-->
+											
+										</div><!--flexslider-->	
+									</div><!--banner-->
+									
+								</div><!--col-md-12-->
+							</div><!--banner-block-->
+							
+						</div><!--row-->
+					</div><!--container-->
+				</div><!--header-block-->
+				
+			</header>
+		</div><!--wrapper-->
+		
+		<script type="text/javascript" src="../../stylesheets/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../../stylesheets/jquery-ui.min2.js"></script> 
+		
+		<script type="text/javascript" src="../../stylesheets/bootstrap.min.js"></script>
+		
+		<!-- <script type="text/javascript">
+			$(window).load(function(){
+				myEvent();
+			});
+		</script> -->
+		
+		<script type="text/javascript">
+		window.addEventListener('load',function myEvent() {
+				// function myEvent()
+				// {
+					ulNodes = document.getElementById("sub");
+					liNodes = [];
+				
+					for(var i=0;i<ulNodes.childNodes.length;i++)
+					{
+						if(ulNodes.childNodes[i].nodeName == "LI")
+						{
+							mpData = ulNodes.childNodes[i].getAttribute('class');
+							ulNodes.childNodes[i].setAttribute('class','n-menu' + "  " + mpData);		// add class="n-menu" + EXISTING class only for parent <li> ;  i.e., those without sub-menu
+							
+							liNodes.push(ulNodes.childNodes[i]);
+						}
+					}
+				
+				
+					var inp = document.getElementById("sub");
+					tot_Li = inp.getElementsByClassName("n-menu").length;		//no. of parent <li>
+					//document.getElementById("out1").innerHTML = tot_Li;			
+					
+					n = 6;  //manual limit for no. of <li>
+					
+					
+					if(tot_Li > n)
+					{
+						myMore();
+					}	
+					
+					
+					//more-function
+					function myMore(){
+						myUl = document.getElementById("sub");		
+						myLi = document.createElement("LI");		//new <li>
+						myUl.appendChild(myLi);						//append <li>
+						myLi.setAttribute('id','more');				// add "id" - <li>
+						
+						subMore = document.getElementById("more");
+						subAl = document.createElement("A");			//new <a>
+						subAl.setAttribute('href','#nogo');
+						subAl.innerHTML = "MORE";
+						subMore.appendChild(subAl);
+						
+						subUl = document.createElement("UL");		//new <ul>
+						subMore.appendChild(subUl);
+						
+						subUl.setAttribute('id','moreUl');			//add "id" - ul
+						
+						/*start*/
+						var mrUl = document.getElementById("moreUl");
+						var old_Li = document.getElementsByClassName("n-menu");
+						v = old_Li.length;			//8
+					 	nw_Li = [];
+					 	
+					 	
+				 	
+						for(var i = v;i>n ;i--)			//i=8    i>6
+							{
+								
+								v = v-1;			//v=7;
+								
+								mrUl.appendChild(old_Li[v]);			//append the extra <li> into more-menu <ul>
+								// old_Li[v].removeAttribute('class');
+								//document.getElementById("out3").innerHTML = v;
+							} 
+					}
+				//}
+			});
+		</script>
+	</body>
+</html>

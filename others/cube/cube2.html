@@ -1,0 +1,107 @@
+<!DOCTYPE  html>
+<head>
+	<title>CUBE</title>
+</head>
+<style>
+*{box-sizing:border-box;}
+.out{margin:100px;perspective:1000px;perspective-origin:80% -150px;}
+
+.cube{width:100px;margin:0 auto;transform-style:preserve-3d;transform:rotateY(0deg);transform-origin:center center;animation: spin 2s linear infinite;transition:transform 2s linear;}
+
+@keyframes spin{
+	from{transform:rotateY(0deg);}
+	to{transform:rotateY(360deg);}
+}
+
+
+.cube div{width:200px;height:200px;position:absolute;border:1px solid black;text-align:center;opacity:0.8;animation: alter 1s linear infinite;transition:all 1s linear;}
+
+.cube:hover div{transform:scale(2,2);opacity:1;display:inline-block;z-index:1;border-radius:20%;}
+
+/*
+@keyframes alter{
+	0%{opacity:0.8;}
+	25%{opacity:0.5;}
+	50%{opacity:0.2;}
+	75%{opacity:0.7;}
+	100%{opacity:1;}
+}
+*/
+
+.cube h2{padding:30% 0%;}
+
+.front{background:lightblue url("g.jpg") no-repeat 0 0;background-size:cover;transform: rotateY(0deg);transform-origin: center center;color:black;text-shadow:1px 1px red;}
+.back{background:lightyellow url("d.jpg") no-repeat 0 0;background-size:cover;ransform-origin: center center;transform:translateZ(-200px) rotateY(-180deg);color:#fff;text-shadow:1px 1px darkblue;}
+.right{background:lightgrey url("a.jpg") no-repeat 0 0;background-size:cover;transform-origin:right center;transform:rotateY(90deg) translateX(200px);color:#fff;text-shadow:1px 1px cyan;}
+.left{background:lightgreen url("v.jpeg") no-repeat 0 0;background-size:cover;transform-origin:left center;transform:rotateY(-90deg) translateX(-200px);color:darkblue;text-shadow:1px 1px red;}
+.top{background:violet url("m.jpg") no-repeat 0 0;background-size:50% 100%;transform-origin: center top;transform:rotateX(90deg) translateY(-200px);color:black;text-shadow:1px 1px yellow;}
+.bottom{background:lightpink url("p.png") no-repeat 0 0;background-size:cover;transform-origin: center bottom;transform:rotateX(-90deg) translateY(200px);color:darkblue;text-shadow:1px 1px lightred;}
+
+
+.out1{margin:100px;perspective:800px;perspective-origin:21% -100px;}
+
+.cube1{width:100px;margin-top:200px;transform-style:preserve-3d;transform:rotateX(0deg);transform-origin:0% 0%;animation: spin1 2s linear 2;transition:transform 2s linear;position:relative;left:-30%;}
+
+
+
+@keyframes spin1{
+	from{left:-30%;}
+	to{left:0%;}
+}
+/*
+@keyframes spin1{
+	from{transform:rotateX(0deg);}
+	to{transform:rotateX(360deg);}
+}
+*/
+
+.cube1 div{width:100px;height:100px;position:absolute;border:1px solid black;text-align:center;opacity:0.9;animation: alter1 4s linear infinite;transition:opacity 4s linear;}
+
+/*
+@keyframes alter1{
+	0%{opacity:0.8;}
+	25%{opacity:0.5;}
+	50%{opacity:0.2;}
+	75%{opacity:0.7;}
+	100%{opacity:1;}
+}
+*/
+
+.cube1 h4{padding:18% 0%;}
+
+.front1{background-color:lightblue;transform:rotateY(0deg) translateZ(-100px);transform-origin: center center;}
+.back1{background-color:lightyellow;ransform-origin: center center;transform:translateZ(-200px) rotateY(-180deg);}
+.right1{background-color:lightgrey;transform-origin:right center;transform:rotateY(90deg) translateX(200px);}
+.left1{background-color:lightgreen;transform-origin:left center;transform:rotateY(-90deg) translateX(-200px);}
+.top1{background-color:violet;transform-origin: center top;transform:rotateX(90deg) translateY(-200px);}
+.bottom1{background-color:lightpink;transform-origin: center bottom;transform:rotateX(-90deg) translateY(200px);}
+
+</style>
+
+<body>
+	
+	<div class="out1">
+		<div class="cube1">
+			
+			<div class="front1"><h4>FRONT</h4></div>
+			<div class="back1"><h4>BACK</h4></div>
+			<div class="right1"><h4>RIGHT</h4></div>
+			<div class="left1"><h4>LEFT</h4></div>
+			<div class="top1"><h4>TOP</h4></div>
+			<div class="bottom1"><h4>BOTTOM</h4></div>
+		</div>
+	</div>
+	
+	<div class="out">
+		<div class="cube">
+			
+			<div class="front"><h2>GERRARD</h2></div>
+			<div class="back"><h2>DANI</h2></div>
+			<div class="right"><h2>AGUERO</h2></div>
+			<div class="left"><h2>VILLA</h2></div>
+			<div class="top"><h2>REUS</h2></div>
+			<div class="bottom"><h2>PUYOL</h2></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+http://www.koekenberg.nl/nl/hubert   --> (in menu) : border-transition
+
+
+sub-menu transition:
+
+http://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index3.html
+
+http://tympanus.net/Development/CreativeLinkEffects/
+
+http://www.instantshift.com/2014/01/30/free-html5-css3-drop-down-menus/
+
+https://www.script-tutorials.com/demos/364/index.html
+
+http://red-team-design.com/wp-content/uploads/2011/11/css3-animated-dropdown-menu-demo.html
+
+
+buttons:
+
+http://tympanus.net/Development/CreativeButtons/
+
+http://tympanus.net/Development/ProgressButtonStyles/
+
+
+icons:
+http://tympanus.net/Development/IconHoverEffects/#set-4

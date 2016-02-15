@@ -1,0 +1,25 @@
+* {margin:0px;padding:0px;}
+a{text-decoration:none;}
+img{border:none;}
+a:hover,a:focus{text-decoration:none;}
+
+#wrapper{overflow:hidden;}
+.container{max-width:1000px;}
+.container{max-width:1130px;}
+.no-padding{padding:0;}
+.no-margin{margin:0;}
+.no-margin-left{margin-left:0;}
+.no-padding-right{padding-right:0;}
+.no-padding-left{padding-left:0;}
+.text-center{text-align:center!important;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+
+h2{text-align:center;color:#000;}
+h2 a{color:#000;}
+h2 a:hover,h2 a:focus{color:#000;text-decoration:none;}
+
+.gallery{border:1px solid;overflow:hidden;float:left;}
+.gallery ul li{display:inline-block;width:245px;margin-right:0.5%;}
+.gallery ul li:nth-child(4n){margin-right:0;}
