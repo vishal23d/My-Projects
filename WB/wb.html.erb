@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300' rel='stylesheet' type='text/css'>
+	
+		<style type="text/css">
+			body{-webkit-text-size-adjust: 100%;}
+		</style>
+		
+		<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> #16728f -->
+		<link href="stylesheets/bootstrap.min.css" media="all" type="text/css" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link href="stylesheets/flexslider.css" media="all" type="text/css" rel="stylesheet"/>
+		<link href="stylesheets/animate.css" media="all" type="text/css" rel="stylesheet"/>
+		<link href="stylesheets/wb.css" media="all" type="text/css" rel="stylesheet"/>
+		
+		<title>WB</title>
+	</head>
+	
+	<body>
+		<div id="wrapper">	
+			<header>
+				<div class="header-block col-md-12 no-padding">
+					<div class="container">
+						<div class="header-top col-md-12 col-sm-12 col-xs-12">
+							<div class="social-links col-md-12 col-sm-12 col-xs-12">
+								<ul class="list-inline">
+									<li><a href="#nogo"><span class="fa fa-facebook"></a></li>
+									<li><a href="#nogo"><span class="fa fa-google-plus"></a></li>
+									<li><a href="#nogo"><span class="fa fa-twitter"></a></li>
+									<li><a href="#nogo"><span class="fa fa-youtube"></a></li>
+								</ul>
+							</div><!--SOCIAL-LINKS-->
+						</div><!--HEADER-TOP-->
+						
+						<div class="row">
+							<div class="header-menu col-md-12 col-sm-12 col-xs-12 no-padding">
+								<div class="navbar-header col-md-3">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									
+									<a href="#nogo"><img class="img-responsive" src="images/logo.png" alt="logo"></a>
+								</div>
+								
+								<div class="collapse navbar-collapse col-md-6">
+									<ul class="nav navbar-nav navbar-right">
+										<li class=""><a href="#home">HOME</a></li>
+										<li class=""><a href="#home">MENU1</a></li>
+										<li class=""><a href="#home">MENU2</a></li>
+										<li class=""><a href="#home">MENU3</a></li>
+										<li class=""><a href="#home">MENU4</a></li>
+										<li class=""><a href="#home">MENU5</a></li>
+									</ul>
+								</div>
+							</div><!--HEADER-MENU-->
+						
+						</div><!--ROW-->
+					</div><!--CONTAINER-->
+				</div><!--HEADER-BLOCK-->
+				
+				<div class="banner-block col-md-12 col-sm-12 col-xs-12 no-padding">
+					<div class="flexslider">
+						<ul class="slides">
+							<li><img src="images/bg2.jpg" class="img-responsive" alt="banner-img"/></li>
+							<li><img src="images/bg1.jpg" class="img-responsive" alt="banner-img"/></li>
+							<li><img src="images/bg3.jpg" class="img-responsive" alt="banner-img"/></li>
+						</ul>
+					</div><!--FLEXSLIDER-->
+				</div><!--BANNER-BLOCK-->
+			</header>
+			
+			<div class="container-block col-md-12 col-sm-12 col-xs-12 no-padding">
+				
+			</div><!--CONTAINER-BLOCK-->
+		</div><!--WRAPPER-->
+		
+		<script type="text/javascript" src="stylesheets/bootstrap.min.js"></script>
+		<script type="text/javascript" src="stylesheets/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="stylesheets/jquery-ui.min2.js"></script>
+		<script type="text/javascript" src="stylesheets/jquery.flexslider.js"></script>
+		
+		<script>
+		$(window).load(function(){
+			$('.banner-block').flexslider({
+				animation : "fade",
+				animationSpeed : 2000,
+				directionNav : true,
+				slideshow: true,
+
+				easing : "swing",
+				touch : true,
+				pauseOnHover : false
+			});
+		});
+		</script>
+	</body>
+	
+</html>

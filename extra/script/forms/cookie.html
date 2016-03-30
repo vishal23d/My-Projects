@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+	<link href="../../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+	<title>ELEMENT - COUNT </title>
+
+<style>
+	#info,#myOut,#info1,#myOut1{display:inline-block;width:auto;background-color:#CDCDCD;font-size:14px;font-style: italic;}
+	/*#itext{border:1px solid red;}*/
+</style>
+
+</head>
+<body>
+	
+	<div class="container">
+		
+		<div class="jumbotron">
+			<form name="myForm1" method="get" autocomplete="off" id="newForm">
+			
+			<p>
+			  <label for="f_name">First name:</label>
+			  <input type="text" name="fname" id="itext1" class="inval">
+			  <span id="info1"></span>
+			  <span id="myOut1"></span>
+			 </p>
+			 
+			 
+			<p> 
+			  <label for="lname">Last name:</label>
+			  <input type="text" name="lname" id="itext2" class="inval">
+			  <span id="info2"></span>
+			  <span id="myOut2"></span>
+			 </p>
+
+			  		
+			  <p>
+			  	<input type="radio">
+			  </p> 
+			  
+			  <input type="button" value="SET COOKIE" id="b-set" onclick="setCookie()"/>
+			  
+			  <input type="button" value="GET COOKIE" id="b-get" onclick="getCookie()"/>
+			  
+			  <input type="button" value="DEL COOKIE" id="b-del" onclick="delCookie()"/>
+			  
+			  <!-- <input type="button" value="Type - TEXT" id="subt" onclick="return cText()"/> -->
+			  
+			
+			</form>
+			
+			<br>
+			
+			<p id="out1" style="margin-bottom:10px;"></p>
+			
+			<p id="out2"></p>
+			
+			<p id="out3"></p>
+			
+		
+			 
+		</div>
+		
+        
+        
+	</div>
+	
+	 
+	
+	<!-- <script type="text/javascript" src="../../stylesheets/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="../../stylesheets/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../../stylesheets/jquery-ui.min2.js"></script>
+	
+	<script type="text/javascript">
+	function setCookie(){
+		cookie_name = $("#itext1").attr("name");
+		inVal  = $("#itext1").val();
+		
+		cookie_val = cookie_name + ": " + inVal;
+		document.Cookie = cookie_val;
+		alert(cookie_val);
+		return localStorage.setItem(cookie_name, inVal);
+	}
+
+	function getCookie()
+	{
+		cookie_val = document.Cookie;
+		if(cookie_val != "")
+		{	
+			alert(cookie_val);
+		}
+		else
+		{	
+			alert("No cookies available!!");
+		}
+		
+	}
+	
+	function delCookie()
+	{
+		document.Cookie = "";
+		cookie_val = document.Cookie;
+		alert("Cookie cleared!! Cookie value : nil !!");
+		
+	}
+
+</script>
+</body>
+
+</html>

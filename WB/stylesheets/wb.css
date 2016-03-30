@@ -1,0 +1,48 @@
+*{padding:0px; margin:0px;}
+img{border:none;}
+a{text-decoration:none;}
+a:hover{text-decoration: none;}
+a:focus{text-decoration: none;}
+
+body{font-family: 'Yanone Kaffeesatz', sans-serif;font-size: 62.5%;}
+p{font-size:20px;line-height: 24px;margin: 0px; color:#464646;}
+h3{font-size:26px;padding-left:0px;padding-top:5px;font-weight:normal;margin:0 0 35px 0;color:#464646;text-align:center;}
+h3 a{color:#464646;}
+h3:hover{color:#464646;}
+h3 a:hover{color:#464646;}
+h2{color:#000;}
+h2 a{color:#000;}
+h2 a:focus, a:hover{color:#000;}
+
+.container{width:100%;}
+.no-padding{padding:0px;}
+.no-margin{margin:0px;}
+
+
+/*HEADER-BLOCK*/
+.header-block{position:absolute;top:0;z-index:10;}
+/*HEADER-TOP*/
+.header-top{padding:25px 0px;}
+.social-links ul{text-align:right;}
+.social-links ul li{font-size:24px;padding:0px 5px;width:40px;text-align:center;}
+.social-links ul li a{color:#FFF;}
+.social-links ul li:hover a{color:#EA6153;}
+
+/*HEADER-MENU*/
+.navbar-header{padding-left:6%;}
+.collapse{float:right;width:70%;}
+
+.nav{background-color:#EA6153;padding-right:10%;}
+.nav li{padding:15px 20px;text-align:center;font-size:22px;-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;-o-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+.nav li a{color:#FFF;font-weight:300;padding:20px 0px;min-width:90px;}
+.nav li:hover{background-color:#FFF;}
+.nav li:hover a{color:#EA6153;}
+.nav > li > a:focus, .nav > li > a:hover{background-color:transparent;}
+
+
+/*BANNER-BLOCK*/
+.banner-block .flexslider{padding:0;}
+.banner-block .flex-control-nav{bottom:30px;}
+.banner-block .flex-control-paging li a.flex-active{background-color:#FFF;height:13px;width:13px;position:relative;top:-2px;}
+.banner-block .flex-control-paging li a{background-color:#EA6153;border-radius:0;height:10px;width:10px;}
+
