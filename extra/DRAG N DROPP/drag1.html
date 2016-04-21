@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FINAL MENU - SCRIPT</title>
+		
+		<link href="../../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="drag.css" media="all" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="main">
+				<span class="one"><input type="radio" title="Horizontally" name="stack" id="hor" >HORIZONTAL</span>
+				
+				<span class="two"><input type="radio" title="Horizontally" name="stack" id="ver" checked>VERTICAL</span>
+				
+				<div class="outer">
+					<div class="left" ondragover="allowDrop(event)">
+						
+					</div><!--LEFT-->
+					
+					<div class="right">
+						<div id="col1" class="col-md-1" draggable="true" ondragstart="drag(event)"> 1 </div>
+						
+						<div id="col2" class="col-md-2" draggable="true" ondragstart="drag(event)"> 2 </div>
+						
+						<div id="col3" class="col-md-3" draggable="true" ondragstart="drag(event)"> 3 </div>
+						
+						<div id="col4" class="col-md-4" draggable="true" ondragstart="drag(event)"> 4 </div>
+						
+						<div id="col5" class="col-md-5" draggable="true" ondragstart="drag(event)"> 5 </div>
+						
+						<div id="col6" class="col-md-6" draggable="true" ondragstart="drag(event)"> 6 </div>
+						
+						<div id="col7" class="col-md-7" draggable="true" ondragstart="drag(event)"> 7 </div>
+						
+						<div id="col8" class="col-md-8" draggable="true" ondragstart="drag(event)"> 8 </div>
+						
+						<div id="col9" class="col-md-9" draggable="true" ondragstart="drag(event)"> 9 </div>
+						
+						<div id="col10" class="col-md-10" draggable="true" ondragstart="drag(event)"> 10 </div>
+						
+						<div id="col11" class="col-md-11" draggable="true" ondragstart="drag(event)"> 11 </div>
+						
+						<div id="col12" class="col-md-12" draggable="true" ondragstart="drag(event)"> 12 </div>
+					</div><!--RIGHT-->
+					
+				</div><!--OUTER-->
+			</div><!--MAIN-->
+			
+		</div><!--WRAPPER-->
+		<script type="text/javascript" src="../../stylesheets/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../../stylesheets/jquery-ui.min2.js"></script> 
+		<script type="text/javascript" src="../../stylesheets/bootstrap.min.js"></script>
+		
+		<script>
+			$('#hor').click(function(){
+				$('.left').addClass('hori').removeClass('anim');
+				$('.right').addClass('hori').removeClass('anim');
+			});
+			$('#ver').click(function(){
+				$('.left').removeClass('hori').addClass('anim');
+				$('.right').removeClass('hori').addClass('anim');
+			});
+		</script>
+		
+		<script>
+			function allowDrop(e){
+				e.preventDefault();
+			}
+			
+			function drag(e){
+				e.preventDefault();
+			}
+		</script>
+	</body>
+</html>
