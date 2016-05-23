@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all" />
+<link href="gallery.css" type="text/css" rel="stylesheet" media="all" />
+<body>
+	
+	<div id="wrapper">
+		<div class="container">
+			<div class="slideshow-container col-md-12 no-padding">
+				<ul class="slideshow">
+					<li><img src="../../images/img4.jpg" class="img-responsive"></li>
+					<li class=""><img src="../../images/img5.jpg" class="img-responsive"></li>
+					<li class=""><img src="../../images/img9.jpg" class="img-responsive"></li>
+					<li class=""><img src="../../images/img7.jpg" class="img-responsive"></li>
+				</ul>
+				
+			</div>
+		
+		</div><!--CONTAINER-->
+	</div><!--WRAPPER-->
+
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../javascripts/jquery-ui.min2.js"></script>
+	<script type="text/javascript" src="gallery.js"></script>
+
+<script>
+	$(document).ready(function(){
+		mySlide({
+			animate:"zoomin",
+			direction:"reverse"
+		});
+	});
+</script>
+
+</body>
+</html> 
