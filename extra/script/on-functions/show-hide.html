@@ -4,40 +4,26 @@
 		<title>SHOW - HIDE</title>
 	</head>
 	<style>
+		*{box-sizing:border-box;}
 		.parent{width:50%;float:left;border:1px solid;}
 		#head{width:auto;padding:5px;float:left;border:1px solid aqua;background-color:#000;color:#FFF;text-align:center;margin:5% 10%;cursor:pointer;}
 		.content{width:80%;float:left;margin:0% 10% 5%;}
 		.content h3{color:lightgrey;}
 		.foot{width:80%;float:left;margin:0% 10% 5%;}
 		.foot h2{color:purple;}
-		
 		.show{display:block;width:80%;float:left;margin:0% 10% 5%;}
 		.hide{display:none;}
-		
 		.color{font-size:30px;color:grey;text-shadow:0px 2px 2px aqua;}
-		
 		.newClass{background-color:lightblue;}
+		
+		.copycat{width:49%;float:left;padding:0.5% 5%;border:1px solid grey;}
+		.copycat label{min-width:100px;float:left;}
 	</style>
 	
-	<script>
-		function showHide(){
-			if(document.getElementById('first').getAttribute('class') === 'show')
-			{
-				// document.getElementById('first').className = "newClass";
-				document.getElementById('first').setAttribute('class','hide');
-				document.getElementById('second').setAttribute('class','show');
-				document.getElementById('label1').setAttribute('class','color');
-			}
-			else
-			{
-				document.getElementById('first').setAttribute('class','show');
-				document.getElementById('second').setAttribute('class','hide');		
-				document.getElementById('label2').setAttribute('class','color');		
-			}
-		}
-	</script>
+	
 	<body>
 		<div class="parent">
+			<h2 style="padding-left:10%;">TOGGLE - SHOW / HIDE</h2>
 			<div id="head" onclick="showHide()">ON CLICK</div>
 			
 			<div class="show" id="first">
@@ -55,6 +41,55 @@
 				<p>Text text texT .</p>
 			</div>
 			
-		</div>
+		</div><!--PARENT-->
+		
+		<div class="copycat">
+			<h2>COPY FUNCTION</h2>
+			
+			<p><label>SOURCE : </label><input type="text" class="source"></p>
+			
+			<p><label>COPY : </label><input type="text" class="source"></p>			
+		</div><!--COPYCAT-->
+		
+		<script type="text/javascript" src="../../stylesheets/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../../stylesheets/jquery-ui.min2.js"></script> 
+		
+		<script  defer="true">
+		function showHide(){
+			if(document.getElementById('first').getAttribute('class') === 'show')
+			{
+				// document.getElementById('first').className = "newClass";
+				document.getElementById('first').setAttribute('class','hide');
+				document.getElementById('second').setAttribute('class','show');
+				document.getElementById('label1').setAttribute('class','color');
+			}
+			else
+			{
+				document.getElementById('first').setAttribute('class','show');
+				document.getElementById('second').setAttribute('class','hide');		
+				document.getElementById('label2').setAttribute('class','color');		
+			}
+		}
+	</script>
+	
+		<!--<script>
+		//var src, cpy; 
+			document.addEventListener('DOMContentLoaded',function(){
+				src = document.getElementsByClassName("source");
+				src[0].addEventListener("keyup",function(){
+
+				//cpy = document.getElementById("copy");
+					src[1].setAttribute('value',src[0].value);
+				});
+			});
+		</script>-->
+		
+		<script>
+			$(document).ready(function(){
+				$(".source:eq(0)").on('keyup',function(){
+					$(".source:eq(1)").val($(this).val());
+				});
+			});
+		</script>
 	</body>
 </html>
