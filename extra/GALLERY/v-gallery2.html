@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all" />
+<link href="gallery2.css" type="text/css" rel="stylesheet" media="all" />
+<body>
+	
+	<div id="wrapper">
+		<div class="container">
+			<div class="gallery col-md-12 no-padding">
+				
+				<div id="slider">
+					<div><img src="../../images/img4.jpg" class="img-responsive"></div>
+					<div><img src="../../images/img5.jpg" class="img-responsive"></div>
+					<div><img src="../../images/img9.jpg" class="img-responsive"></div>
+					<div><img src="../../images/img7.jpg" class="img-responsive"></div>
+					<div><img src="../../images/img8.jpg" class="img-responsive"></div>
+					<div><img src="../../images/img12.jpg" class="img-responsive"></div>
+				</div>
+				
+			</div><!--gallery-->
+		
+		</div><!--CONTAINER-->
+	</div><!--WRAPPER-->
+
+	<script type="text/javascript" src="../javascripts/jquery-1.11.1.js"></script>
+	<!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+	<script type="text/javascript" src="../javascripts/jquery-ui.min2.js"></script>
+	<!--<script type="text/javascript" src="swipe_gallery.js"></script>-->
+
+<script>
+	$(document).ready(function(){
+		
+		/*-- HTML --*/
+		var navigation = "<a href='#nogo' class='navigator' id='previous'> </a>" + "<a href='#nogo' class='navigator' id='next'> </a>";
+		$("#slider").before("<div class='slideshow'>").before("<div class='slidebox'></div>");
+		$(".slideshow").append($(".slidebox").append($("#slider"))).append(navigation);
+		$("#slider > div").addClass("slide");
+		
+		parent = $("#slider").parent();
+		parent_width = parent.width();
+		console.log(parent_width);
+		
+		active_child = 0;
+		$("#slider .slide:eq(0)").addClass("slide-active");
+		
+		children_num = $("#slider .slide").length;
+		console.log(children_num);
+		slider_width = parent_width * children_num;  
+		
+		child_width = $("#slider .slide").width(parent_width);
+		$("#slider").width(slider_width);
+		
+		slide_position = document.getElementById("slider").offsetTop;
+		
+		var slideObj = { 0 : 0}; 
+		for(var x=1; x<children_num;x++)
+		{
+			var dummy = x.toString();
+			slideObj.x =  slide_position + parent_width;
+		}
+		
+		$("#next").on("click",function(){
+			if(slide_position >= (-parent_width*(children_num-1)) )
+			{	roll("next");	}
+			
+			//if($("#slider .slide:eq("+(children_num-1)+")").hasClass("slide-active"))
+			if(slide_position < (-parent_width*(children_num-1)))
+			{
+				active_child = 0;
+				slide_position = 0;
+				activate_slide();
+			}
+		});
+		
+		$("#previous").on("click",function(){
+			console.log(slide_position);
+			if(slide_position <= -parent_width)
+			{	roll("prev");	}
+		});
+		
+		function roll(direction)
+		{
+			if(direction == "next")
+			{
+				slide_position = slide_position - parent_width;
+				active_child = active_child + 1;
+			}
+			
+			if(direction == "prev")
+			{
+				slide_position = slide_position + parent_width;
+				active_child = active_child - 1;
+			}
+			
+			activate_slide();
+			
+		}
+		
+		function activate_slide()
+		{
+			$("#slider .slide").removeClass("slide-active");
+			$("#slider .slide:eq("+active_child+")").addClass("slide-active");
+			return $("#slider").css("left",slide_position+"px");
+		}
+		
+		/*var right = window.setTimeout(function(){
+			$("#next").trigger("click");
+		}, 5000);*/
+		
+		//clearTimeout(right);
+		
+		(function($){
+			
+		}(jQuery));
+		
+		/*$.fn.greenify = function() {
+		    this.css( "border", "1px solid red" );
+		};*/
+	});
+</script>
+
+</body>
+</html> 
+
+
+<!--<div class="slideshow">
+	<div class="slidebox">
+		<div id="slider">
+			<div><img src="../../images/img4.jpg" class="img-responsive"></div>
+			<div><img src="../../images/img5.jpg" class="img-responsive"></div>
+			<div><img src="../../images/img9.jpg" class="img-responsive"></div>
+			<div><img src="../../images/img7.jpg" class="img-responsive"></div>
+			<div><img src="../../images/img8.jpg" class="img-responsive"></div>
+			<div><img src="../../images/img12.jpg" class="img-responsive"></div>
+		</div>
+	</div>
+
+	<a href="#nogo" class="navigator" id="previous"> </a>
+	<a href="#nogo" class="navigator" id="next"> </a>
+</div>-->
